@@ -78,14 +78,14 @@ Ciastka stworzone w ten sposób to tzw. _ciastka sesyjne_ - tzn. po wyłączeniu
 app.get('/cookie/set', (req, res) => {
     res.cookie('test', 'Hello, World', {
         maxAge : 31536000000,
-    }); //Ustawi ciastko "test" z zawartością "Hello, World" w przeglądarce użytkownika
+    }); //Ustawi ciastko "test" z zawartością "Hello, World" w przeglądarce użytkownika na rok
     res.send('Ciastko ustawione!');
 });
 
 // (...)
 ```
 
-W ten sposób ustawione ciastko pozostanie nawet po ponownym włączeniu przeglądarki/komputera - przez cały rok. Można to sprawdzić w zakładce **Application* w DevToolsach Chroma (uruchomiłem ten kod 23.01.18):
+W ten sposób ustawione ciastko pozostanie nawet po ponownym włączeniu przeglądarki/komputera - przez cały rok. Można to sprawdzić w zakładce **Application** w DevToolsach Chroma (uruchomiłem ten kod 23.01.18):
 
 <img src="https://i.imgur.com/cBkyxL1.png" alt="Ciastko w DevToolsach Chroma" width="500">
 
@@ -110,7 +110,7 @@ app.get('/cookie/remove', (req, res) => {
 
 ### Odczyt ciastek
 
-Wiemy już jak wysłać ciastko na komputer użytkownika. Teraz wypadałoby wiedzieć jakie ciastka już u niego są. Aby Express mógł odpowiednio zinterpretować ciasteczka potrzebujemy tzw. parsera ciastek (dlatego, że są one przesyłane mało czytelnym sposobem). Polecanym i bardzo popularnym rozwiązaniem jest `cookie-parser`.
+Wiemy już jak wysłać ciastko na komputer użytkownika. Teraz wypadałoby wiedzieć jakie ciastka już u niego są - czyli je odczytać. Aby Express mógł odpowiednio zinterpretować ciasteczka potrzebujemy tzw. parsera ciastek (dlatego, że są one przesyłane mało czytelnym sposobem). Polecanym i bardzo popularnym rozwiązaniem jest `cookie-parser`.
 
 Aby z niego skorzystać użyjemy `npm`. W katalogu projektu linią komend/terminalem wykonujemy:
 
@@ -198,7 +198,7 @@ app.use(bodyParser.urlencoded());
 
 ### Odbieranie danych z formularza
 
-Od teraz w każdym zapytaniu (`req`) mamy dostęp do obiektu `res.body`, którego kluczami są nazwy pól formularz. Np. aby odczytać wcześniej przesłane imię i nazwisko:
+Od teraz w każdym zapytaniu (`req`) mamy dostęp do obiektu `res.body`, którego kluczami są nazwy pól formularza. Np. aby odczytać wcześniej przesłane imię i nazwisko:
 
 ```JavaScript
 // (...)
@@ -245,7 +245,7 @@ Oprócz tego w aplikacji mają być 3 ścieżki:
 
 Stwórz aplikację Express, która będzie prostym jednowątkowym forum dyskusyjnym. Powinna ona serwować statyczne pliki ze ścieżki `'./public/zadanieDnia/'`.
 
-Statyczny plik powinien nazywać się `add.html` i zawierać taki formularz, który zawiera jedno pole `textarea` - z treścią komentarza. Formularz powinien kierować do ścieżki `/save`.
+Statyczny plik powinien nazywać się `add.html` i zawierać taki formularz, który ma jedno pole `textarea` - z treścią komentarza. Formularz powinien kierować do ścieżki `/save`.
 
 Ścieżka `/save` powinna dodawać komentarz do listy już dodanych komentarzy (przechowywaną w ciastku!) i wyświetlać link do powrotu na stronę główną.
 
@@ -257,7 +257,9 @@ Statyczny plik powinien nazywać się `add.html` i zawierać taki formularz, kt�
 >
 > Pamiętaj, żeby sprawdzić czy wcześniej ciastko istniało.
 
-> Jeżeli chcesz podpowiedzi to skorzystaj z pliku `app/zadanieDniaZPodpowiedzia.js` - znajdziesz tam pomocnicze, opisane funkcje `addComment(stringZCiastka, komentarz)` oraz `readComments(stringZCiastka)`.
+> Jeżeli chcesz podpowiedzi to skorzystaj z pliku `app/zadanieDniaZPodpowiedzia.js` - znajdziesz tam pomocnicze, opisane funkcje.
+
+> PS. Oczywiście takie podejście ma swoje wady. Spróbuj np. dodać dużo długich komentarzy - widzisz problemy? W praktyce tego typu dane przechowujemy na back-endzie - to zrobimy już jutro.
 
 **To wszystko na dziś - gratulacje! Do jutra :)**
 
