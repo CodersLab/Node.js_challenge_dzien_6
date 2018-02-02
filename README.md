@@ -30,7 +30,7 @@ Poszczególne zadania rozwiązuj w odpowiednich plikach.
 
 ___
 
-# Dzień 5: Full-stack?
+# Dzień 6: Full-stack?
 
 > Więc mówisz, że chciałbyś być full-stack developerem?
 > 
