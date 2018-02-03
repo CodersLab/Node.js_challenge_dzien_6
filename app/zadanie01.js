@@ -8,7 +8,7 @@ app.use(express.static('./public/zadanie01/'));
 
 app.post('/result', (req, res) => {
     const {a, b} = req.body; 
-    let is = parseInt(a) % parseInt(b) === 0 ? '' : ' nie';
+    const is = parseInt(a) % parseInt(b) === 0 ? '' : ' nie';
     res.send('Liczba ' + b + is + ' jest dzielnikiem liczby ' + a);
 });
 
