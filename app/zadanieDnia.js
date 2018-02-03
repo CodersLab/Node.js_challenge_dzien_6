@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/save', (req, res) => {
-  let comments = addComment(req.cookies.comments, req.body.comment);
+  const comments = addComment(req.cookies.comments, req.body.comment);
   res.cookie('comments', comments, {
     maxAge: 2628000000,
   });
