@@ -20,7 +20,7 @@ app.get('/cookie/show', (req, res) => {
 });
 
 app.get('/cookie/check', (req, res) => {
-    let is = req.cookies.cookieName === undefined ? 'nie' : '';
+    const is = req.cookies.cookieName === undefined ? 'nie' : '';
     res.send('Imię '+ is + ' zostało zapisane w ciastku.');
 });
 
