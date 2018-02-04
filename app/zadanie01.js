@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname + '/public/zadanie01/index.html'));
