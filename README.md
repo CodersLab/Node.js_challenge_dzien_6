@@ -203,7 +203,7 @@ Od teraz w każdym zapytaniu (`req`) mamy dostęp do obiektu `res.body`, któreg
 ```JavaScript
 // (...)
 
-app.get('/sciezka/w/backendzie', (req, res) => {
+app.post('/sciezka/w/backendzie', (req, res) => {
     const {name, surname} = req.body; //Pamiętasz ten skrótowy zapis z ES6?
     res.send('Więc twierdzisz, że nazywasz się ' + name + ' ' + surname);
 });
