@@ -7,10 +7,12 @@
 	<title>Document</title>
 </head>
 <body>
-	<form action="/form" method="post">
-		Liczba 1: <input type="number" step="1" name="num1">
-		Liczba 2: <input type="number" step="1" name="num2">
-		<button type="submit">Sprawdź</button>
+	
+	<form action="/save" method="post" id="form">
+		<textarea name="comment" form="form">Wpisz text</textarea>
+		<br>
+		<button type="submit">Wyślij</button>
 	</form>
+	
 </body>
 </html>
