@@ -1,1 +1,24 @@
-<!-- Twój kod -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadanie02</title>
+    <style>
+    a {
+        display: block;
+    }
+    </style>
+</head>
+<body>
+
+    <form action="/cookie/set" method="post">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name">
+        <input type="submit" value="Save">
+    </form>
+    <a href="/cookie/show">Show saved name</a>
+    <a href="/cookie/check">Check if name is already saved in cookies</a>
+</body>
+</html>

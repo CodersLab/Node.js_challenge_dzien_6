@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ZadanieDnia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+    <style>
+        body {
+            padding: 100px;
+        }
+        textarea {
+            min-height: 150px;
+            margin-bottom: 15px;
+        }
+        .btn {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3>All comments</h3>
+        <% if (locals.msg) { %>
+            <p style="color: green; display: block;"><%= msg %></p>
+        <% } %>
+        <% if (locals.comments && comments.length > 0) { %>
+            <ul class="collection">
+                <% for(var i=0; i < comments.length; i++) {%>
+                    <li class="collection-item">
+                        <%= comments[i] %>
+                    </li>
+                <% } %>
+            </ul>
+        <% } %>
+        <a href="/add" class="btn">Add comment</a>
+        <% if (locals.comments && comments.length > 0) { %>
+            <a href="/delete" class="btn red">Delete all comments</a>
+        <% } %>
+    </div>
+    <!-- /.container -->
+    
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+</html>
