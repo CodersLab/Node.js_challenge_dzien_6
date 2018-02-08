@@ -26,7 +26,7 @@ app.get('/cookie/show', (req, res) => {
 app.get('/cookie/check', (req, res) => {
     let name = req.cookies.name;
 
-    if(name != 'undefined'){
+    if(typeof name != 'undefined'){
         res.send('Ciastko ma wartość: ' + name); 
     } else {
         res.send('Ciastko nie zostalo ustawione'); 

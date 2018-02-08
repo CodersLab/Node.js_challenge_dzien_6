@@ -13,7 +13,7 @@ app.post('/save', (req, res) => {
     let text  = req.body.text;
     let actual = req.cookies.content;
 
-    if(actual == 'undefined'){
+    if(typeof actual == 'undefined'){
 
         res.cookie('content', JSON.stringify({ "messages": [text] }), {
             maxAge : 31536000000,
@@ -35,7 +35,7 @@ app.post('/save', (req, res) => {
 app.get('/', (req, res) => {
     let actual = req.cookies.content;
 
-    if(actual == 'undefined'){
+    if(typeof actual == 'undefined'){
         res.send('Brak wiadomości');
     } else {
        res.json(JSON.parse(actual));
