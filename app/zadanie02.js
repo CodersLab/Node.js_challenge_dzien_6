@@ -34,8 +34,11 @@ app.get('/cookie/show/', (req, res) => {
 
 app.get('/cookie/check/', (req, res) => {
     myCookie = req.cookies.zadanie02
-    
-    res.send('check: ' + myCookie)
+    if (myCookie === undefined){
+        res.send('there is no cookies: ' + myCookie)
+    }else{
+        res.send('imię to: ' + myCookie)
+    }
 })
 
 app.listen(3000, () => {
